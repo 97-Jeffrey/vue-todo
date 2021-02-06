@@ -20,24 +20,7 @@ export default {
   },
   data(){
     return {
-      todos: [
-        {
-          id:1,
-          title: "todo 1",
-          completed: false
-        },
-        {
-          id:2,
-          title: "todo 2",
-          completed: true
-        },
-        {
-          id:3,
-          title: "todo 3",
-          completed: false
-        },
-
-      ]
+      todos: []
     }
   },
   methods:{
@@ -47,7 +30,11 @@ export default {
     addTodo(newTodo){
       this.todos = [...this.todos, newTodo];
     }
+  },
+  created(){
+    
   }
+
 };
 </script>
 
@@ -68,8 +55,9 @@ body{
   border:none;
   background: #555;
   color:#fff;
-  padding:7px 20px;
+  padding:7px 15px;
   cursor:pointer;
+  border-radius:10px;
 }
 
 .btn:hover{
