@@ -2,9 +2,9 @@
   <div class="todo-item" 
   v-bind:class="{'is-complete':todo.completed}">
     <p>
-      <input type="checkbox" v-on:change="markComplete">
+      <input type="checkbox" v-on:change="markComplete" :checked="todo.completed">
       {{todo.title}}
-      <button @click= "$emit('del-todo',todo.id)" class="del">x</button>
+      <button @click= "$emit('del-todo',todo.id)" class="del">remove </button>
     </p>
   </div>
 </template>
@@ -16,8 +16,9 @@ export default {
   methods: {
     markComplete(){
        this.todo.completed = !this.todo.completed;
+ 
     }
-  }
+  },
 }
 </script>
 
@@ -40,7 +41,7 @@ export default {
   color:#fff;
   border:none;
   padding: 5px 9px;
-  border-radius: 50%;
+  border-radius: 10px;
   cursor:pointer;
   float:right;
 }
