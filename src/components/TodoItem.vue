@@ -4,6 +4,7 @@
     <p>
       <input type="checkbox" v-on:change="markComplete" :checked="todo.completed">
       {{todo.title}}
+      <button v-if="todo.completed" class="complete-btn">Completed</button>
       <button @click= "$emit('del-todo',todo.id)" class="del">remove </button>
     </p>
   </div>
@@ -37,13 +38,25 @@ export default {
 }
 
 .del{
-  background: #f00;
+  background: rgb(224, 66, 66);
   color:#fff;
   border:none;
   padding: 5px 9px;
   border-radius: 10px;
   cursor:pointer;
   float:right;
+}
+.del:hover{
+  background: red;
+}
+.complete-btn{
+  background: rgb(3, 167, 3);
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  margin-left:40px;
+  padding: 4px 8px;
+
 }
 
 
